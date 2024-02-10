@@ -4,7 +4,8 @@ const Analytics = ({ allTransection }) => {
   // category
   const categories = [
     "salary",
-    "trading",
+    "tip",
+    "project",
     "academic",
     "food",
     "movie",
@@ -100,7 +101,7 @@ const Analytics = ({ allTransection }) => {
           </div>
         </div>
         <div className="col-md-3">
-          {/* <h6 className="bg-dark p-2 text-light">Categorywise Income</h6> */}
+          <h6 className="bg-dark p-2 text-light">Categorywise Income</h6>
           {categories.map((category) => {
             const amount = allTransection
               .filter(
@@ -126,7 +127,7 @@ const Analytics = ({ allTransection }) => {
           })}
         </div>
         <div className="col-md-3">
-          {/* <h6 className="bg-warning p-2 text-light">Categorywise Expense</h6> */}
+          <h6 className="bg-warning p-2 text-light">Categorywise Expense</h6>
           {categories.map((category) => {
             const amount = allTransection
               .filter(

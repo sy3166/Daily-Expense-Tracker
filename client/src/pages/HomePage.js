@@ -42,10 +42,10 @@ const HomePage = () => {
       title: "Category",
       dataIndex: "category",
     },
-    {
-      title: "Refrence",
-      dataIndex: "refrence",
-    },
+    // {
+    //   title: "Reference",
+    //   dataIndex: "refrence",
+    // },
     {
       title: "Actions",
       render: (text, record) => (
@@ -75,7 +75,7 @@ const HomePage = () => {
       try {
         const user = JSON.parse(localStorage.getItem("user"));
         setLoading(true);
-        const res = await axios.post("/api/v1/transections/get-transection", {
+        const res = await axios.post("/transections/get-transection", {
           userid: user._id,
           frequency,
           selectedDate,
@@ -94,7 +94,7 @@ const HomePage = () => {
   const handleDelete = async (record) => {
     try {
       setLoading(true);
-      await axios.post("/api/v1/transections/delete-transection", {
+      await axios.post("/transections/delete-transection", {
         transacationId: record._id,
       });
       setLoading(false);
@@ -112,7 +112,7 @@ const HomePage = () => {
       const user = JSON.parse(localStorage.getItem("user"));
       setLoading(true);
       if (editable) {
-        await axios.post("/api/v1/transections/edit-transection", {
+        await axios.post("/transections/edit-transection", {
           payload: {
             ...values,
             userId: user._id,
@@ -230,12 +230,12 @@ const HomePage = () => {
           <Form.Item label="Date" name="date">
             <Input type="date" />
           </Form.Item>
-          <Form.Item label="Reference" name="reference">
+          {/* <Form.Item label="Reference" name="reference">
             <Input type="text" required />
           </Form.Item>
           <Form.Item label="Description" name="description">
             <Input type="text" required />
-          </Form.Item>
+          </Form.Item> */}
           <div className="d-flex justify-content-end">
             <button type="submit" className="btn btn-primary">
               {" "}
