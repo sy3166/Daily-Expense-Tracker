@@ -230,7 +230,7 @@ const HomePage = () => {
           <Form.Item label="Date" name="date">
             <Input type="date" />
           </Form.Item>
-          <Form.Item label="Reference" name="refrence">
+          <Form.Item label="Reference" name="reference">
             <Input type="text" required />
           </Form.Item>
           <Form.Item label="Description" name="description">
